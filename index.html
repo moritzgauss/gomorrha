@@ -344,6 +344,11 @@
             const audio = new Audio('https://github.com/moritzgauss/italiaonline/raw/main/videoplayback.mp3');
             audio.play();
 
+    // Autoplay audio
+        window.addEventListener('load', () => {
+            audioPlayer.play().catch(error => console.log('Audio play was prevented:', error));
+});
+
             // Countdown timer
             audio.onloadedmetadata = function() {
                 const duration = Math.floor(audio.duration);
